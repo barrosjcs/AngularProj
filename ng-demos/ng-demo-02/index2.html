@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Utilizando controller e $scope</title>
+	<meta charset="utf-8" />
+    <link href="../content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../content/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="container" ng-controller="MeuCtrl">
+        <h1>{{ title }}</h1>
+        <ul>
+            <li ng-repeat="item in itens">
+                {{item.id}} - {{item.title}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="../Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller("MeuCtrl", function ($scope) {
+            console.log("Entrou controller")
+            $scope.title = "Meus itens";
+            $scope.itens = [
+                { id: 1, title: 'Itens 1' },
+                { id: 2, title: 'Itens 2' },
+                { id: 3, title: 'Itens 3' },
+            ];
+        });
+    </script>
+</body>
+</html>
