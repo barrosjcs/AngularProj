@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>TODO List</title>
+	<meta charset="utf-8" />
+    <link href="../content/bootstrap.min.css" rel="stylesheet"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../content/toastr.min.css" rel="stylesheet" />
+    <link href="../content/themes/bootstrap-paper.min.css" rel="stylesheet" />
+    <style>
+        .todo-true{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" ng-controller="MeuCtrl">
+        
+    </div>
+
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
+    <script src="../Scripts/toastr.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller("MeuCtrl", function ($scope) {
+            console.log("Entrou controller")
+
+            $scope.title = "Minha Lista de Tarefas";
+            $scope.todo = {
+                id: 0,
+                text: '',
+                done: false
+            }
+
+            $scope.todos = [
+                {
+                    id: 1,
+                    text: 'Teste1',
+                    done: false
+                },
+                {
+                    id: 2,
+                    text: 'Teste2',
+                    done: true
+                }
+            ]
+        });
+    </script>
+</body>
+</html>

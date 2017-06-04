@@ -14,6 +14,12 @@
                 {{item.id}} - {{item.title}}
             </li>
         </ul>
+        <br /><hr /><br />
+        <input type="text" class="form-control col-md-4" ng-model="mensagem" placeholder="mensagem"/>
+        <br />
+        <button class="btn btn-primary" ng-click="disparaAlerta()">Alerta Padrão</button>
+        <button class="btn btn-primary" ng-click="disparaAlertaPersonalizado(mensagem)">Alerta Personalizado</button>
+        <button class="btn btn-primary" ng-click="adicionaItem(mensagem)">Adicionar Item</button>
     </div>
 
     <script src="../Scripts/angular.min.js"></script>
@@ -27,6 +33,21 @@
                 { id: 2, title: 'Itens 2' },
                 { id: 3, title: 'Itens 3' },
             ];
+
+            $scope.disparaAlerta = function(){
+                alert('Olá');
+            }
+
+            $scope.disparaAlertaPersonalizado = function (mensagem) {
+                alert(mensagem);
+            }
+            // Adicionar item a lista
+            $scope.adicionaItem = function (mensagem) {
+                var id = $scope.itens.length + 1;
+                $scope.itens.push({
+                    id: id, title: mensagem
+                })
+            }
         });
     </script>
 </body>
