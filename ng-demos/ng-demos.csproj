@@ -93,6 +93,10 @@
     <Content Include="ng-demo-01\index1.html" />
     <Content Include="ng-demo-02\index2.html" />
     <Content Include="ng-demo-03\index3.html" />
+    <Content Include="ng-demo-04\index4.html" />
+    <Content Include="ng-demo-05\index5.html" />
+    <Content Include="ng-demo-05\my-customer-badge.html" />
+    <Content Include="ng-demo-06\index6.html" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />

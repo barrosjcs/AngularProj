@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Módulos</title>
+	<meta charset="utf-8" />
+    <link href="../content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="container" ng-controller="MeuCtrl">
+        <h1>{{ title }}</h1>
+    </div>
+
+    <script src="../Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller("MeuCtrl", function ($scope) {
+            console.log("Entrou controller")
+            $scope.title = "Meu controller no módulo";
+            
+        });
+    </script>
+</body>
+</html>
