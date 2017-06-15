@@ -3,20 +3,23 @@
 <head>
     <title>Estruturando a aplicação {{ title }}</title>
 	<meta charset="utf-8" />
+    <base href="/ng-demo-06/" />
+
     <link href="../content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../content/themes/bootstrap-superhero.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container" ng-controller="MeuCtrl">
+    <div class="container">
+        <div ng-view></div>
     </div>
 
     <script src="../Scripts/angular.min.js"></script>
-    <script>
-        var app = angular.module('app', []);
-        app.controller("MeuCtrl", function ($scope) {
-            console.log("Entrou controller")
-            $scope.title = "Meus itens";
-            
-        });
-    </script>
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/angular-route.min.js"></script>
+    <script src="../Scripts/angular-animate.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/areas/home/controllers/HomeCtrl.js"></script>
 </body>
 </html>

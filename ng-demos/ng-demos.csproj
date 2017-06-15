@@ -96,6 +96,10 @@
     <Content Include="ng-demo-04\index4.html" />
     <Content Include="ng-demo-05\index5.html" />
     <Content Include="ng-demo-05\my-customer-badge.html" />
+    <Content Include="ng-demo-06\404.html" />
+    <Content Include="ng-demo-06\app\app.js" />
+    <Content Include="ng-demo-06\app\areas\home\controllers\HomeCtrl.js" />
+    <Content Include="ng-demo-06\app\areas\home\views\indexInner6.html" />
     <Content Include="ng-demo-06\index6.html" />
     <Content Include="ng-demo-07\index7.html" />
     <Content Include="packages.config" />
