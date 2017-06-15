@@ -97,6 +97,7 @@
     <Content Include="ng-demo-05\index5.html" />
     <Content Include="ng-demo-05\my-customer-badge.html" />
     <Content Include="ng-demo-06\index6.html" />
+    <Content Include="ng-demo-07\index7.html" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />

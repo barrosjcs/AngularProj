@@ -17,6 +17,10 @@
         <div class="row">
             <div ng-customer-badge></div>
         </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-4" ng-repeat="cliente in clientes" ng-customer-generic cliente="cliente"></div>
+        </div>
     </div>
 
     <script src="../Scripts/angular.min.js"></script>
@@ -32,6 +36,25 @@
                 imagem: 'http://placehold.it/80x80',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper sem vitae urna pellentesque, tempus eleifend erat vulputate. Fusce eu massa nec diam fermentum tincidunt. Cras consequat, orci et elementum tristique, elit est porttitor purus, ac fringilla dolor risus non metus. Morbi faucibus sodales felis, nec malesuada velit ultrices vel. Etiam ac neque non elit cursus lacinia non sit amet erat. Maecenas varius sem turpis, eu lacinia magna consectetur at. Integer non sodales ex.'
             };
+
+            $scope.cliente2 = {
+                nome: 'Bruce',
+                sobrenome: 'Wayne',
+                imagem: 'http://placehold.it/80x80',
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper sem vitae urna pellentesque, tempus eleifend erat vulputate. Fusce eu massa nec diam fermentum tincidunt. Cras consequat, orci et elementum tristique, elit est porttitor purus, ac fringilla dolor risus non metus. Morbi faucibus sodales felis, nec malesuada velit ultrices vel. Etiam ac neque non elit cursus lacinia non sit amet erat. Maecenas varius sem turpis, eu lacinia magna consectetur at. Integer non sodales ex.'
+            };
+
+            $scope.clientes = [{
+                nome: 'André',
+                sobrenome: 'Baltieri',
+                imagem: 'http://placehold.it/80x80',
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper sem vitae urna pellentesque, tempus eleifend erat vulputate. Fusce eu massa nec diam fermentum tincidunt. Cras consequat, orci et elementum tristique, elit est porttitor purus, ac fringilla dolor risus non metus. Morbi faucibus sodales felis, nec malesuada velit ultrices vel. Etiam ac neque non elit cursus lacinia non sit amet erat. Maecenas varius sem turpis, eu lacinia magna consectetur at. Integer non sodales ex.'
+            }, {
+                nome: 'Bruce',
+                sobrenome: 'Wayne',
+                imagem: 'http://placehold.it/80x80',
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper sem vitae urna pellentesque, tempus eleifend erat vulputate. Fusce eu massa nec diam fermentum tincidunt. Cras consequat, orci et elementum tristique, elit est porttitor purus, ac fringilla dolor risus non metus. Morbi faucibus sodales felis, nec malesuada velit ultrices vel. Etiam ac neque non elit cursus lacinia non sit amet erat. Maecenas varius sem turpis, eu lacinia magna consectetur at. Integer non sodales ex.'
+            }];
         });
 
         app.directive('ngCustomer', function () {
@@ -42,6 +65,14 @@
         app.directive('ngCustomerBadge', function () {
             return {
                 templateUrl: 'my-customer-badge.html'
+            }
+        });
+        app.directive('ngCustomerGeneric', function () {
+            return {
+                templateUrl: 'my-customer-badge.html',
+                scope: {
+                    cliente: '='
+                }
             }
         });
     </script>
