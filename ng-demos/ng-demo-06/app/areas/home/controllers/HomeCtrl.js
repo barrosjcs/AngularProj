@@ -5,10 +5,12 @@
         .module('app')
         .controller('HomeCtrl', HomeCtrl);
 
-    HomeCtrl.$inject = ['$scope']; 
+    HomeCtrl.$inject = ['$scope', '$route', '$location'];
 
-    function HomeCtrl($scope) {
-        console.log('Entrou em HomeCtrl')
+    function HomeCtrl($scope, $route, $location) {
+        console.log('Entrou em HomeCtrl');
         $scope.title = "Clientes Cadastrados";
+        $scope.$route = $route;
+        $scope.$location = $location;
     }
 })();

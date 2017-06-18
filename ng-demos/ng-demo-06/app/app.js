@@ -7,20 +7,23 @@
         //debugger;
         console.log('routeProvider');
         $routeProvider
-            .when('/', {
+            .when('/index6.html', {
                 controller: 'HomeCtrl',
                 templateUrl: 'app/areas/home/views/indexInner6.html'
             })
             .otherwise({
-                //redirectTo: '404.html'
                 controller: 'HomeCtrl',
-                templateUrl: 'app/areas/home/views/indexInner6.html'
-            })
+                templateUrl: '404.html'
+            });
 
-        $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
-        });
+        // CASO NÃO QUEIRA PASSAR A TAG BASE AO USAR ESTE OBJETO
+        //$locationProvider.html5Mode({
+        //    enabled: true,
+        //    requireBase: false
+        //});
+
+        $locationProvider.html5Mode(true);
+        $locationProvider.hashPrefix('!');
     });
 
     //app.run(['$rootScope', function($rootScope) {
@@ -30,8 +33,8 @@
     //        console.log(next);
     //    });
 
-    //    $rootScope.$on('routeChangeSuccess', function (event, next, current) {
-    //        console.log('Erro');
+    //    $rootScope.$on('routeChangeSuccess', function (event, current, previous) {
+    //        console.log('Sucesso');
     //        console.log(current);
     //        console.log(previous);
     //    });
