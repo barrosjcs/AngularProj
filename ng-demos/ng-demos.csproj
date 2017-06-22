@@ -102,6 +102,7 @@
     <Content Include="ng-demo-06\app\app.js" />
     <Content Include="ng-demo-06\app\areas\home\controllers\HomeCtrl.js" />
     <Content Include="ng-demo-06\app\areas\home\views\indexInner6.html" />
+    <Content Include="ng-demo-06\app\repositories\CustomerRepository.js" />
     <Content Include="ng-demo-06\index6.html" />
     <Content Include="ng-demo-07\index7.html" />
     <Content Include="packages.config" />
@@ -863,6 +864,7 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <Content Include="ng-demo-06\app\data\customers.json" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
