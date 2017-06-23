@@ -13,8 +13,22 @@
         $scope.$route = $route;
         $scope.$location = $location;
 
-        function LoadCustomers() {
+        $scope.customers = [];
 
+        LoadCustomers();
+
+        function LoadCustomers() {
+            // O $http.get é assíncrono, então precisará esperar até ele ter todas as informações para usa-lo,
+            // com isso utiliza-se o .then
+            var customers = CustomerRepository.getAllCustomers();
+
+            customers.then(
+                function (result) {
+                    $scope.customers = result.data;
+                },
+                function (error) {
+
+                });
         }
     }
 })();

@@ -1,4 +1,9 @@
-﻿<h1>{{title}}</h1>
-<hr />
+﻿<h1>{{ title }}</h1>
+
 <!--<pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>-->
 <!--<pre>$location.path() = {{$location.path()}}</pre>-->
+<ul class="list-unstyled">
+    <li ng-repeat="customer in customers">
+        {{ customer.firstName }} {{ customer.lastName }} - {{ customer.email }}
+    </li>
+</ul>

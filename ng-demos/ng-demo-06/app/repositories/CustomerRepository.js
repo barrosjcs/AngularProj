@@ -9,7 +9,7 @@
 
     function CustomerRepository($http) {
         return {
-            getAllCustomer: function () {
+            getAllCustomers: function () {
                 return $http.get('app/data/customers.json');
             }
         }
