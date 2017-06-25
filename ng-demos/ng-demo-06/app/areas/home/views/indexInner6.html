@@ -2,8 +2,11 @@
 
 <!--<pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>-->
 <!--<pre>$location.path() = {{$location.path()}}</pre>-->
+
+<input type="text" placeholder="Filtrar" ng-model="search" class="form-control" style="width: 300px"/>
+<br />
 <ul class="list-unstyled">
-    <li ng-repeat="customer in customers">
+    <li ng-repeat="customer in customers | filter: search">
         {{ customer.firstName }} {{ customer.lastName }} - {{ customer.email }}
     </li>
 </ul>
