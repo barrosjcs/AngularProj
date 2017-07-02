@@ -1,23 +1,77 @@
 ﻿<!DOCTYPE html>
 <html ng-app="app">
 <head>
-    <title>Módulos</title>
+    <title>CRUD</title>
 	<meta charset="utf-8" />
     <link href="../content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../content/themes/bootstrap-superhero.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container" ng-controller="MeuCtrl">
-        <h1>{{ title }}</h1>
+        <h1 class="text-center">CRUD</h1>
+        <div class="container text-center">
+            <button class="btn btn-info" ng-click="obter()">GET</button>
+            <button class="btn btn-info" ng-click="obterPorId(23)">GET(23)</button>
+            <button class="btn btn-info" ng-click="criar()">POST</button>
+            <button class="btn btn-info" ng-click="alterar()">PUT</button>
+            <button class="btn btn-info" ng-click="excluir(23)">DELETE</button>
+        </div>
     </div>
 
     <script src="../Scripts/angular.min.js"></script>
     <script>
         var app = angular.module('app', []);
-        app.controller("MeuCtrl", function ($scope) {
-            console.log("Entrou controller")
-            $scope.title = "Meus itens";
-            
-        });
+
+        app.controller('MeuCtrl', ['$scope', '$http', function ($scope, $http) {
+            $scope.title = "Meu Controller";
+
+            $scope.obter = function () {
+                $http.get(serviceUrl).then(function (result) {
+                    console.log(result.data);
+                });
+            }
+
+            $scope.obterPorId = function (id) {
+                $http.get(serviceUrl + '/' + id).then(function (result) {
+                    console.log(result.data);
+                });
+            }
+
+            $scope.criar = function () {
+                var data = {
+                    id: 0,
+                    firstName: 'Jeff',
+                    lastName: 'Barros',
+                    email: 'jeffBarros@teste.com'
+                };
+
+                $http.post(serviceUrl, data).then(function (result) {
+                    console.log(result.data);
+                });
+            }
+
+            $scope.alterar = function () {
+                var data = {
+                    id: 0,
+                    firstName: 'Jeff',
+                    lastName: 'Barros',
+                    email: 'jeffBarros@teste.com'
+                };
+
+                $http.put(serviceUrl, data).then(function (result) {
+                    console.log(result.data);
+                });
+            }
+
+            $scope.excluir = function (id) {
+                $http.delete(serviceUrl + '/' + id).then(function (result) {
+                    console.log(result.data);
+                });
+            }
+
+            var serviceUrl = 'app/data/customers.json';
+
+        }]);
     </script>
 </body>
 </html>
